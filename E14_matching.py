@@ -1,18 +1,14 @@
-!pip install pdf2image
 from pdf2image import convert_from_path
-
-!pip install poppler-utils
-!sudo apt install poppler-utils poppler-data
+# Python program to illustrate
+# template matching
+import cv2
+import numpy as np
 
 pages = convert_from_path('6026810_E14_PRE_X_01_001_001_XX_01_001_X_XXX.pdf', 500)
 
 for page in pages:
     page.save('6026810_E14_PRE_X_01_001_001_XX_01_001_X_XXX.jpg', 'JPEG')
 
-# Python program to illustrate 
-# template matching 
-import cv2 
-import numpy as np 
 
 # Read the main image 
 img_rgb = cv2.imread('6026810_E14_PRE_X_01_001_001_XX_01_001_X_XXX.jpg')
